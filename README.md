@@ -1,5 +1,5 @@
 # SXGBsite  
-SXGBsite used PSSM-DCT and PSA to extract features containing sequence information and a prediction model was constructed using SMOTE and XGBoost.  
+SXGBsite is a method to predict protein-ligand binding site residues, used PSSM-DCT and PSA to extract features containing sequence information, and a prediction model was constructed using SMOTE and XGBoost.  
   
 ## Install  
 - Libsvm needs to be installed in MATLAB path to achieve feature normalization. 
