@@ -9,7 +9,7 @@ SXGBsite is a method to predict protein-ligand binding site residues, used PSSM-
 - The python code in SXGBsite was written in python3.7. 
 
     The python packages of math, numpy, pandas, xgboost, scipy, matplotlib.pyplot, sklearn, imblearn and collections are required, and the version of packages has less impact on the running code.  
-- Python environment build recommended Anaconda3 (download at: https://www.anaconda.com/distribution/), examples of how to install python package in Anaconda Prompt, as follows:  
+- Python environment build recommend Anaconda3 (download at: https://www.anaconda.com/distribution/), examples of how to install python package in Anaconda Prompt, as follows:  
 
     ```
     pip install numpy
