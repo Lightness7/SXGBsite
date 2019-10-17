@@ -2,14 +2,16 @@
 clc
 clear
 
-
+% load label of data set
 load('D:\Data\GTP\label.mat');
 
+% load dataset in 'XXX.fasta' format
 [HEADER, SEQ] = fastaread('D:\Data\GTP\GTP_TRAIN.fasta');
 SEQ = SEQ';
 HEADER=HEADER';
 Protein_num = size(SEQ,1);
 
+% Read PSSM files (for example, 'XXX.pssm') in the document
 PSSM_path = 'D:\Data\GTP\PSSM_TRAIN\';
 PSSM_file = '.pssm';
 PSSM_path_file = [];
@@ -19,6 +21,8 @@ path2 = cellstr(path1);
 PSSM_path_file = [PSSM_path_file; path2];
 end
 
+% The PSSM feature of contiguous residues is selected by 8 adjacent
+% residues on both sides of the target amino acid residue with a window size of 8*2 + 1
 PSSM_with_window=[];
 window = 8;
 window_size = window*2 + 1;
@@ -32,7 +36,9 @@ PSSM_Matrix = Read_PSSM(file_i, Sequence_i_num);
 PSSM_with_window = [PSSM_with_window; PSSM_i];
 end
 
-%DCT
+% DCT compresses PSSM features of continuous residues and selects the first
+% 9 rows of PSSM-DCT matrix as PSSM-DCT features
+% DCT
 PSSM_DCT_feature=[];
 for i=1:size(PSSM_with_window,1)
 	PSSM_i = [];
@@ -43,7 +49,8 @@ for i=1:size(PSSM_with_window,1)
 	PSSM_DCT_feature(i, :) = PSSM_DCT_i(:);	
 end
 
-% %DWT
+% DWT compresses PSSM features of continuous residues and obtains PSSM-DWT features
+% DWT
 % PSSM_DWT_feature=[];
 % for i=1:size(PSSM_with_window,1)
 % 	PSSM_ii = [];
@@ -52,8 +59,9 @@ end
 % 	PSSM_DWT_ii = EstraggoConDWT(PSSM_ii,4);
 % 	PSSM_DWT_feature = [PSSM_DWT_feature;PSSM_DWT_ii];
 % end
- 
-%PSA
+
+% PSA, load the PSA data sets in the document, the format is 'XXX.psa'
+% PSA
 PSSM_path = 'D:\Data\GTP\GTP_Train_PSA';
 PSSM_file = '.psa';
 PSA_path_file = [];
