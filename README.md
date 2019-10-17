@@ -20,7 +20,7 @@ SXGBsite is a method to predict protein-ligand binding site residues, used PSSM-
     ```
     etc.  
   
-## Benchmark Datasets  
+## Benchmark Dataset  
 The benchmarks were constructed by Yu et al.[1], the PSSM files were obtained by PSI-BLAST, and the PSA files were obtained by Sann.  
   
 [1] Yu, D.J.; Hu, J.; Yang, J.; Shen, H.B.; Tang, J.; Yang, J.Y. Designing template-free predictor for targeting protein-ligand binding sites with classifier ensemble and spatial clustering. IEEE/ACM Trans. Comput. Biol.Bioinform. 2013, 10, 994-1008.  
@@ -36,7 +36,7 @@ The benchmarks were constructed by Yu et al.[1], the PSSM files were obtained by
 
 - The datasets after feature extraction are obtained by running 'Extract_Feature_Demo.m'. The input are PSSM files and PSA files of protein sequence. Different dataset feature extraction only needs to modify the input path, as follows:  
 
-  Modify the path in line 8, 11, 17, 67, 102, 105, 111, 161, and 202 to the local path in 'Extract_Feature_Demo.m'.
+  Modify the path of line 8, 11, 17, 67, 102, 105, 111, 161, and 202 in 'Extract_Feature_Demo.m' to the local path.
 
 - The datasets after feature extraction are downloaded at: 
   
