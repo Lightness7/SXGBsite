@@ -14,7 +14,7 @@ from collections import Counter
 
 # load the data set in the 'XXX.mat' format after feature extraction
 # the feature extraction part in SXGBsite is completed by MATLAB
-data_path = "D:\Work\SXGBsite\Data\GTP\GTP_DCT_PSA.mat"
+data_path = "D:\Data\GTP\GTP_DCT_PSA.mat"
 data_sample = scio.loadmat(data_path)
 
 # load the dataset in the 'XXX.mat' format
